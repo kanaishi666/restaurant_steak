@@ -1,0 +1,536 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (min-width:781px) {
+
+	body{
+		margin-top: 0;
+		margin: 0 auto;
+		padding-bottom: 0;
+	}
+	
+	.gheader_sp,.NavMenu,.Toggle {
+		display: none;
+	}
+
+	/*右の余白を消し、画面幅に収める*/
+	#wrapper {
+		width:100%;
+		overflow:hidden;
+	}
+	
+	#pagetop{
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		right: 25px;
+		bottom: 30px;
+		background: #3f98ef;
+		opacity: 0.6;
+		border-radius: 50%;
+	}
+	#pagetop a{
+		position: relative;
+		display: block;
+		width: 50px;
+		height: 50px;
+		text-decoration: none;
+		text-align: center;
+	}
+	#pagetop a::before{
+		font-family: "Font Awesome 5 Free";
+		content: '\f106';
+		font-weight: 900;
+		font-size: 25px;
+		color: #fff;
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		top: 10px;
+		bottom: 10px;
+		right: 0;
+		left: 0;
+		margin: auto;
+	}
+
+
+	ul {
+		list-style: none;
+	}
+
+	a{
+		color:#333;
+	}
+
+	.gheader,.news h2,.catchcopy_top,.topic1 h2,.topic2 h2,.topic_title,.recomend_plan{
+		font-family: "游明朝", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "メイリオ", "Meiryo", "HGS明朝B", "HG明朝B", "ＭＳ 明朝", serif;
+	}
+
+	.news,.paragragh_top,.topic_content{
+		font-family: "游ゴシック","Yu Gothic","游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",Roboto,"Open Sans","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+	.gheader_sp,.gheader_top_sp,.navTop_sp,.navTop_other_sp,.navTop_block_sp,.navTop_item_reserve_sp,.navMain_sp,.nav_block_sp,.navMain_item_sp,.reservation_sp {
+		display: none;
+	}
+
+	h1 {
+		float: left;
+		padding: 0px 10px;
+		margin-bottom: 0;
+	}
+	
+	h1 a {
+		display: block;
+		width: 250px;
+		height: 30px;
+		font-size: 0;
+		background: url("../image/logo.png") left top/250px auto no-repeat;
+		margin: 0;
+	}
+
+	.navTop {
+		overflow: hidden;
+		height: 51px;
+	}
+
+	.navTop_other {
+		background-color: #FFFFFF;
+		white-space: nowrap;
+		height: 50px;
+		border-bottom: 1.2px solid #C8C8C8;
+		margin-left: auto;
+	}
+
+	.navTop_other ul{
+		text-align: right;
+		margin: 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	/*「宿泊予約」以外*/
+	.navTop_item {
+		width: 140px;
+		text-align: center;
+		background-color: #E9E5DB;
+		float: right;
+		height: 50px;
+		line-height: 50px;
+		margin-right: 0px;	/*list間*/
+		font-size: 14px;
+	}
+
+	/*「宿泊予約」*/
+	.navTop_item_reserve {
+		width: 140px;
+		text-align: center;
+		background-color: #77C5B6;
+		float: right;
+		height: 50px;
+		line-height: 50px;
+		margin-right: 0px;	/*list間*/
+		font-size: 14px;
+	}
+
+	/*グローバルナビトップのリンク*/
+	.navTop_other li a {
+		text-decoration: none;
+		color: #272727;
+		font-weight: bold;
+		padding: 20px;
+		transition: all .3s;
+	}
+	
+	.navTop_item a:hover {
+		color: #AFAFAF;
+	}
+
+	.navTop_item_reserve:hover {
+/*		color: #6B6B6B;*/
+		color: #77C5B6;
+		background-color: #fff;
+		transition-duration : 0.2s;
+	}
+	
+	.navTop_item_reserve:hover a {
+		color: #00CDA5;
+	}
+	
+	.navMain {
+		margin: 0 60px;
+	}
+	
+
+	.navMain ul{
+		text-align: center;
+		table-layout: fixed;
+		display: table;
+		width: 100%;
+		margin: 1px 0 0 0;
+		padding-left: 0; /*これがないと右に寄ってしまう*/
+	}
+
+	.navMain li {
+		display: table-cell;
+		border-right: 0; /*list間ボーダー*/
+		background-color: #FFFFFF;
+		height: 50px;
+		line-height: 50px;
+		font-size: 14px;
+		vertical-align: middle;
+	}
+
+	.navMain li a {
+		text-decoration: none;
+		color: #191919;
+		font-weight: bold;
+		padding: 5px 10px;
+		display: block;
+  		transition: all .3s;
+	}
+
+	.navMain a:hover {
+	  color: #AFAFAF;
+	}
+	
+.navMain a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.navMain a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #77C5B6;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .3s;
+}
+.navMain a:hover::after {
+  transform: scale(1, 1);
+}
+
+	.mainimage img{
+		max-width: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	/*ニュース　トップ*/
+	.news {
+		text-align: center;
+	}
+	
+	.news h2 {
+		text-align: center;
+	}
+
+	.icon_box{
+		color: #8e7244;
+		padding: 3px 11px;
+		margin-left: 20px;
+		border: 1px solid #8e7244;
+	}
+
+	.text_box{
+		margin-left: 20px;
+	}
+
+	.text_box a{
+		dislay: inline;
+	}
+
+	.news_list{
+		width: 100%;
+		display: table;
+		padding: 0;
+	}
+
+	.news_list li{
+		margin-bottom: 8px;
+	}
+
+	/*キャッチコピー　トップ*/
+	.catchcopy_top h2{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	/*キャッチコピー下線*/
+	.catchcopy_top h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		margin: 5px auto;
+	}
+
+	/*パラグラフ　トップ*/
+	.paragragh_top p{
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	/*スマホ版版トピック　削除*/
+	.topic_sp {
+		display: none;
+	}
+
+	/*トピック1の画像　左*/
+	.topic1 img{
+		width: 60%;
+		float: left;
+		-webkit-transition: all .3s; transition: all .3s;
+	}
+	.topic1 img:hover {
+		opacity: 0.9; filter: brightness(105%);
+	}
+
+	/*トピック1の高さ*/
+	.topic1 {
+		height: 540px;
+	}
+
+	/*トピック１の全体*/
+	.topic1_contents{
+		width: 35%;
+		height: 540px; /*画像の高さと同じ*/
+		margin: 100px 20px 0 auto;
+		padding-top: 60px;
+		text-align: center;
+		position: relative;
+	}
+	/*トピック１のp*/
+	.topic1_contents p{
+		margin_left: 40px;
+		text-align: center;
+	}
+
+	/*トピック１の下線*/
+	.topic1_contents h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		right: 0;
+		left: 0;
+		margin: 5px auto;
+	}
+
+
+	/*トピック１の「〇〇を見る」ボタン*/
+	.topic_btn {
+		margin-top: 20px;
+		min-width: 300px;
+		border: 1px solid #239eb0;
+		display: inline-block;
+		vertical-align: top;
+		color: #333;
+		background: #fff;
+		box-sizing: border-box;
+		border-radius: .1875em;
+		text-decoration: none;
+		transition: all .25s ease;
+		opacity: 1;
+	}
+
+	/*トピック１の「〇〇を見る」 　右ブロック位置*/
+	.topic1_detail {
+		position: relative;
+		line-height: 8px;
+	}
+	/*トピック１の「〇〇を見る」の矢印アイコン　右ブロック位置*/
+	.topic1_detail::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #7a0;
+		border-right: 1px solid #7a0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);	
+		position: absolute;
+		right: 200px; /*これがないと矢印が重なる*/
+	/*	padding: 5px 5px;*/
+	}
+
+	/*トピック2の画像 右*/
+	.topic2 img{
+		width: 60%;
+		float: right;
+		-webkit-transition: all .3s; transition: all .3s;
+	}
+	
+	.topic2 img:hover {
+		opacity: 0.8; filter: brightness(105%);
+	}
+	
+	/*トピック2の高さ*/
+	.topic2 {
+		height: 540px;
+	}
+	/*トピック2の全体*/
+	.topic2_contents{
+		width: 35%;
+		height: 540px; /*画像の高さと同じ*/
+		margin: 100px auto 0 20px;
+		padding-top: 60px;
+		text-align: center;
+		position: relative;
+	}
+	/*トピック2のp*/
+	.topic2_contents p{
+		margin_right: 40px;
+		text-align: center;
+	}
+
+	/*トピック2の下線*/ /*真ん中に位置しない*/
+	.topic2_contents h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		right: 0;
+		left: 0;
+		margin: 5px auto;
+	}
+
+	/*トピック２の「〇〇を見る」 　左ブロック位置*/
+	.topic2_detail {
+		position: relative;
+		line-height: 8px;
+	}
+	/*トピック２の「〇〇を見る」の矢印アイコン　左ブロック位置*/
+	.topic2_detail::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #7a0;
+		border-right: 1px solid #7a0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);	
+		position: absolute;
+		left: 90px; /*これがないと矢印が重なる*/
+	/*	padding: 5px 5px;*/
+	}
+	
+	.recomend_plan {
+		background-color: #F1F1F1;
+		height: 540px;
+		padding-top: 10px;
+		margin-top: 200px;
+	}
+	
+	.recomend_plan h2{
+		text-align: center;
+	}
+	
+	.flex_box {
+		background-color: #eee;     /* 背景色指定 */
+		padding:  10px;             /* 余白指定 */
+		display: flex;              /* フレックスボックスにする */
+		justify-content:center;
+		align-items:stretch;        /* 縦の位置指定 */
+	}
+
+	.flex_item {
+		padding: 0;
+		color:  #fff;               /* 文字色 */
+		margin:  10px;              /* 外側の余白 */
+		border-radius:  5px;        /* 角丸指定 */
+		width: 310px;
+		background: #ffffff none repeat scroll 0% 0%;
+		border: 1px solid #cccccc;
+		box-shadow: 6px 6px 10px #dddddd;
+	}
+
+	.flex_item:nth-child(1) {
+		background-color:  #FFFFFF; /* 背景色指定 */
+	}
+
+	.flex_item:nth-child(2) {
+		background-color:  #FFFFFF; /* 背景色指定 */
+	}
+
+	.flex_item:nth-child(3) {
+		background-color: #FFFFFF; /* 背景色指定 */
+	}
+	
+	.flex_item h3 {
+		height: 80px;
+		padding: 10px;
+	}
+	
+	.flex_item a {
+		text-decoration: none;
+	}
+	
+	.flex_item p {
+		padding: 10px;
+	}
+	
+	/*キャッチコピー下線*/
+	.recomend_plan h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		margin: 5px auto;
+	}
+
+
+	/*フッター*/
+	.footer {
+		height: 400px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/*フッター　ナビブロック*/
+	.footer_nav {
+		height: 200px;
+		background-color: #77C5B6;
+		display: block;
+		padding-top: 20px;
+		padding-left: 40px;
+	}
+	.footer_navBlock {
+		float: left;
+		width: 200px;
+	}
+	.footer_navBlock li {
+		font-size: 14px;
+	}
+
+	/*フッター　ホテル情報ブロック*/
+	.footer_hotellogo img {
+		width: 220px;
+		height: auto;
+		filter: grayscale(100%);
+	}
+	
+	.footer_hoteldetail {
+		height: 200px;
+		background-color: #C9C9C9;
+		display: block;
+		padding-top: 30px;
+		text-align: center;
+	}
+	
+	.footer_accordionmenu {
+		display: none;
+	}
+	
+	.footer_hoteladdress p {
+		font-size:12px;
+	}
+	
+}

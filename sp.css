@@ -1,0 +1,692 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width:767px){
+  /*画面幅が480pxまでの時*/
+	
+	h1 {
+		float: left;
+		padding: 0px 10px;
+		margin-bottom: 0;
+	}
+	
+	h1 a {
+		display: block;
+		width: 200px;
+		height: 20px;
+		font-size: 0;
+		background: url("../image/logo.png") left top/200px auto no-repeat;
+		margin: 0;
+	}
+	
+	.gheader_top_sp{
+		height: 60px;
+		width: 100%;
+		position: fixed;
+		z-index: 2;
+		background-color: #fff;
+	}
+	
+	#pagetop{
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		right: 25px;
+		bottom: 30px;
+		background: #3f98ef;
+		opacity: 0.6;
+		border-radius: 50%;
+	}
+	#pagetop a{
+		position: relative;
+		display: block;
+		width: 50px;
+		height: 50px;
+		text-decoration: none;
+		text-align: center;
+	}
+	#pagetop a::before{
+		font-family: "Font Awesome 5 Free";
+		content: '\f106';
+		font-weight: 900;
+		font-size: 25px;
+		color: #fff;
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		top: 10px;
+		bottom: 10px;
+		right: 0;
+		left: 0;
+		margin: auto;
+	}
+	
+	.reservation_sp {
+		width: 50px;
+		height: 42px;
+		float: right;
+		position: fixed;
+		display: block;
+		z-index: 3;
+		right: 60px;
+		top: 12px;
+		background-color: #BCE7DE;
+	}
+	
+	.reservation_sp p{
+		margin: 0;
+		font-size: 10px;
+		text-align: center;
+	}
+	
+	.reservation_sp::before{
+		content: '';
+		background: url(../image_sp/reserve.png) no-repeat;
+		width: calc(50px / 2);
+		height: calc(50px / 2);
+		-webkit-background-size: contain;
+		background-size: contain;
+		position: absolute;
+		top: 12px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	
+	/*ナビメニューのスタイルを指定*/
+	nav.NavMenu{
+		position: fixed; /*表示位置を固定*/
+		z-index: 4; /*重ね順を変更*/
+		top: 0; /*表示位置を指定*/
+		left: 0; /*表示位置を指定*/
+		background: #fff;/*背景を白にする*/
+		color: #000; /*文字色を黒にする*/
+		text-align: center; /*テキストを中央揃え*/
+		width: 100%; /*全幅表示*/
+		transform: translateY(-100%); /*ナビを上に隠す*/
+		transition: all 0.6s; /*アニメーションの時間を指定*/
+	}
+
+	nav.NavMenu ul{
+		background: #77C5B6;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	nav.NavMenu ul li{
+		font-size: 16px;
+		list-style-type: none;
+		padding: 0;
+		width: 100%;
+		border-bottom: 1px dotted #333;
+	}
+
+	nav.NavMenu ul li:last-child{
+		padding-bottom: 0;
+		border-bottom: none; /*最後のメニュー項目のみ下線を消す*/
+	}
+
+	nav.NavMenu ul li a{
+		display: block; /*クリックできる領域を広げる*/
+		color: #000;
+		padding: 16px 0;
+		text-decoration: none;
+	}
+	/*トグルボタンが押されたときに付与するクラス*/
+	nav.NavMenu.active{
+		transform: translateY(0%);
+	}
+	
+	/*トグルボタンのスタイルを指定*/
+	.Toggle {
+		display: block;
+		position: fixed;    /* bodyに対しての絶対位置指定 */
+		right: 13px;
+		top: 12px;
+		width: 42px;
+		height: 42px;
+		cursor: pointer;
+		z-index: 4;
+	}
+
+	.Toggle span {
+		display: block;
+		position: absolute;
+		width: 30px;
+		border-bottom: solid 3px #006F5A;
+		-webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+		-moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+		transition: .35s ease-in-out;			/*変化の速度を指定*/
+		left: 6px;
+	}
+
+	.Toggle span:nth-child(1) {
+		top: 9px;
+	}
+
+	.Toggle span:nth-child(2) {
+		top: 18px;
+	}
+
+	.Toggle span:nth-child(3) {
+		top: 27px;
+	}
+
+	/* 最初のspanをマイナス45度に */
+	.Toggle.active span:nth-child(1) {
+		top: 18px;
+		left: 6px;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	/* 2番目と3番目のspanを45度に */
+	.Toggle.active span:nth-child(2),
+	.Toggle.active span:nth-child(3) {
+		top: 18px;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	body{
+		margin: 0 auto;
+		padding-bottom: 0;
+	}
+
+	#wrapper {
+	  width:100%;
+	  overflow: hidden;
+	}
+
+	ul {
+	  list-style: none;
+	}
+
+	a{
+		color:#333;
+	}
+
+	.gheader,.news h2,.catchcopy_top,.topic1 h2,.topic2 h2,.topic_title,.recomend_plan{
+		font-family: "游明朝", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "メイリオ", "Meiryo", "HGS明朝B", "HG明朝B", "ＭＳ 明朝", serif;
+	}
+
+	.news,.paragragh_top,.topic_content{
+		font-family: "游ゴシック","Yu Gothic","游ゴシック体",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",Roboto,"Open Sans","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+	.gheader,.gheader_top,.navTop,.navTop_other,.navTop_block,.navTop_item_reserve,.navMain,.nav_block,.navMain_item {
+		display: none;
+	}
+
+	.navTop {
+		overflow: hidden;
+	}
+
+	.navTop_other {
+		background-color: #FFFFFF;
+		white-space: nowrap;
+		height: 50px;
+	/*	display: inline-block;*/
+		border-bottom: 1.2px solid #C8C8C8;
+	}
+
+	.navTop_other ul{
+		text-align: right;
+	/*	display: inline-block;*/ /*左寄せになるためコメント化*/
+		margin: 0;
+	}
+
+	/*「宿泊予約」以外*/
+	.navTop_item {
+		width: 140px;
+		text-align: center;
+		/*  background-color: #D7C699;*/ /*茶*/
+		background-color: #E9E5DB;
+		float: right;
+		height: 50px;
+		line-height: 50px;
+		margin-right: 0px;	/*list間*/
+		font-size: 14px;
+	}
+
+	/*「宿泊予約」*/
+	.navTop_item_reserve {
+		width: 140px;
+		text-align: center;
+		background-color: #77C5B6;
+		float: right;
+		height: 50px;
+		line-height: 50px;
+		margin-right: 0px;	/*list間*/
+		font-size: 14px;
+	}
+
+	/*グローバルナビトップのリンク*/
+	.navTop_other li a {
+		text-decoration: none;
+		color: #272727;
+		font-weight: bold;
+		padding: 20px;
+	}
+
+	/*PC版グローバルナビメイン　削除*/
+	.gheader {
+		display: none;
+	}
+
+	/*スマホ版　ナビメイン*/
+	.navMain_sp {
+		display: block;
+	}
+	/*ナビ　アイコン*/
+	.nav_block_sp {
+		margin: 10px 0 0 0;
+		padding: 0 40px;
+		width: 80%;
+		text-align: center; 
+	}	
+	.navMain_item_sp {
+		padding: .78125em 0 0 .78125em;
+		display: inline-block;
+		font-size: 0.8rem;
+    	line-height: 1.1;
+		padding: 0;
+		margin: auto 0.3em;
+	}
+	.navMain_item_sp p{
+		width: 6.625em;
+    	height: 6.625em;
+		font-size: 0.8rem;
+    	line-height: 1.1;
+		box-shadow: 4px 4px 8px #dddddd;
+	}
+	.navMain_item_sp a{
+		width: 5.625em;
+    	height: 5.625em;
+		font-size: 0.8rem;
+    	line-height: 1.1;
+		display: table-cell;
+		vertical-align: middle;
+		padding: .3125em;
+		text-decoration: none;
+		border: solid 2px #77C5B6;/*線*/
+	}
+	.icon img{
+		width: 40%;
+		height: auto;
+	}
+	
+	
+	.mainimage img{
+		max-width: none;
+		width: 100%;
+		height: 100%;
+		margin-top: 60px;
+	}
+
+	/*ニュース　トップ*/
+	.news {
+		text-align: center;
+	}
+
+	.icon_box{
+		color: #8e7244;
+		padding: 3px 11px;
+		margin-left: 20px;
+		border: 1px solid #8e7244;
+	}
+
+	.text_box{
+		margin-left: 20px;
+	}
+
+	.textbox a{
+
+		margin-top: 3px;
+	}
+	
+	.news h2 {
+		margin-top: 0;
+	}
+
+	.news_list{
+		width: 90%;
+		display: table;
+		font-size: 15px;/*sp*/
+		text-align: left;
+		margin-right: auto;
+		margin-left: auto;
+		border: 2px double #999999;
+		padding: 10px;
+		padding-top: 15px;
+	}
+
+	.news_list li{
+		margin-bottom: 10px;
+		margin: auto 2px 10px 2px;
+	}
+	
+	.text_box::before {
+	content: "\A" ;
+	white-space: pre ;
+	}
+
+	/*キャッチコピー　トップ*/
+	.catchcopy_top h2{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	/*キャッチコピー下線*/
+	.catchcopy_top h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		margin: 5px auto;
+	}
+
+	/*パラグラフ　トップ*/
+	.paragragh_top p{
+		text-align: center;
+	}
+
+	/*トピック1の画像*/
+	.topic1 img{
+		max-width: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	/*トピック1の高さ*/
+	.topic1 {
+		height: 650px;
+	}
+
+	/*トピック１の全体*/
+	.topic1_contents {
+		width: 100%;
+		height: 300px; /*画像の高さと同じ*/
+		text-align: center;
+		position: relative;
+	}
+	/*トピック１のp*/
+	.topic1_contents p{
+		margin_left: 40px;
+		text-align: center;
+		padding: 10px;
+	}
+
+	/*トピック１の下線*/
+	.topic1_contents h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		right: 0;
+		left: 0;
+		margin: 5px auto;
+	}
+
+
+	/*トピック１、２の「〇〇を見る」ボタン*/
+	.topic_btn {
+		min-width: 300px;
+		border: 1px solid #239eb0;
+		display: inline-block;
+		vertical-align: top;
+		color: #333;
+		background: #fff;
+		box-sizing: border-box;
+		border-radius: .1875em;
+		text-decoration: none;
+		transition: all .25s ease;
+		opacity: 1;
+	}
+
+	/*トピック１の「〇〇を見る」 　右ブロック位置*/
+	.topic1_detail {
+		position: relative;
+		line-height: 8px;
+	}
+	/*トピック１の「〇〇を見る」の矢印アイコン　右ブロック位置*/
+	.topic1_detail::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #7a0;
+		border-right: 1px solid #7a0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);	
+		position: absolute;
+		right: 90px; /*これがないと矢印が重なる*/
+	/*	padding: 5px 5px;*/
+	}
+
+	/*トピック2の画像 右*/
+	.topic2 img{
+		max-width: none;
+		width: 100%;
+		height: 100%;
+	}
+	/*トピック2の高さ*/
+	.topic2 {
+		height: 650px;
+	}
+	/*トピック2の全体*/
+	.topic2_contents{
+		width: 100%;
+		height: 300px; /*画像の高さと同じ*/
+		text-align: center;
+		position: relative;
+	}
+	/*トピック2のp*/
+	.topic2_contents p{
+		margin_right: 40px;
+		text-align: center;
+		padding: 10px;
+	}
+
+	/*トピック2の下線*/ /*真ん中に位置しない*/
+	.topic2_contents h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		right: 0;
+		left: 0;
+		margin: 5px auto;
+	}
+
+	/*トピック２の「〇〇を見る」 　左ブロック位置*/
+	.topic2_detail {
+		position: relative;
+		line-height: 8px;
+	}
+	/*トピック２の「〇〇を見る」の矢印アイコン　左ブロック位置*/
+	.topic2_detail::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #7a0;
+		border-right: 1px solid #7a0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);	
+		position: absolute;
+	    right: 90px; /*これがないと矢印が重なる*/
+	}
+
+	.recomend_plan {
+		background-color: #F1F1F1;
+		height: 1450px;
+		padding-top: 10px;
+	}
+	
+	.recomend_plan h2{
+		text-align: center;
+	}
+	
+	.flex_box {
+		background-color: #eee;     /* 背景色指定 */
+		padding:  10px;             /* 余白指定 */
+		display: flex;              /* フレックスボックスにする */
+		justify-content:center;
+		align-items: stretch;        /* 縦の位置指定 */
+		flex-direction: column;
+	}
+
+	.flex_item {
+		padding: 0;
+		color:  #fff;               /* 文字色 */
+		margin:  10px;              /* 外側の余白 */
+		border-radius:  5px;        /* 角丸指定 */
+		background: #ffffff none repeat scroll 0% 0%;
+		border: 1px solid #cccccc;
+		box-shadow: 6px 6px 10px #dddddd;
+	}
+	
+	.flex_item img{
+		width: 100%;
+	}
+
+	.flex_item:nth-child(1) {
+		background-color:  #FFFFFF; /* 背景色指定 */
+	}
+
+	.flex_item:nth-child(2) {
+		background-color:  #FFFFFF; /* 背景色指定 */
+	}
+
+	.flex_item:nth-child(3) {
+		background-color: #FFFFFF; /* 背景色指定 */
+	}
+	
+	.flex_item h3 {
+		height: 80px;
+		padding: 10px;
+	}
+	
+	.flex_item a {
+		text-decoration: none;
+	}
+	
+	.flex_item p {
+		padding: 10px;
+	}
+	
+	/*キャッチコピー下線*/
+	.recomend_plan h2::after{
+		content: '';
+		display: block;
+		background: #0050BD;
+		height: 3px;
+		width: 28px;
+		margin-top: 5px;
+		margin: 5px auto;
+	}
+
+	/*フッター*/
+	.footer {
+		height: 600px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/*フッター　ナビブロック*/
+	.footer_nav {
+		display: none;
+	}
+	
+	.topic1_sp,.topic2_sp {
+		display: none;
+	}
+	
+	.child {
+		display: none;
+	}
+
+	/*フッター　ホテル情報ブロック*/
+	.footer_hotellogo img {
+		width: 200px;
+		height: auto;
+		filter: grayscale(100%);
+	}
+	
+	.footer_hoteldetail {
+		height: 200px;
+		background-color: #C9C9C9;
+		display: block;
+		padding-top: 40px;
+		padding-bottom: 20px;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.footer_accordionmenu {
+		padding: 0;
+		width: 100%;
+		margin:0 auto;
+	}
+	
+	.footer_accordionmenu_list {
+		background-color: #BCE7DE;
+		list-style:none;
+		margin-top: -1px;
+		border-top: 1px solid #6C6C6C;
+		text-align: center;	
+	}
+	
+	.footer_accordionmenu_list a {
+		text-decoration: none;
+	}
+
+	.question{
+		position: relative;
+		margin: 0;
+		padding: 2px 2px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.question:after {
+		content: "";
+		position: absolute;
+		right: 25px;
+		top: 38%;
+		transition: all 0.2s ease-in-out;
+		/*   要素の動きを指定 */
+
+		display: block;
+		width: 8px;
+		height: 8px;
+		border-top: solid 4px #000;
+		border-right: solid 4px #000;
+
+		-webkit-transform: rotate(135deg);
+		transform: rotate(135deg);
+		/* transform: rotateで要素の角度を指定 */
+
+	}
+
+	.question.open:after {
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		top: 45%;
+		/*   .openクラスがついた時の要素の角度を指定 */
+	}
+	.answer{
+		padding: 8px 16px;
+	}
+	
+	.footer_hoteladdress p {
+		font-size:12px;
+	}
+}
+
