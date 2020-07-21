@@ -1,0 +1,528 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width:767px) {
+
+	body{
+		margin-top: 0;
+		margin: 0 auto;
+		padding-bottom: 0;
+		background-color: #f3ede6;
+	}
+	
+	/*右の余白を消し、画面幅に収める*/
+	#wrapper {
+		width:100%;
+		overflow:hidden;
+	}
+	
+	h1 {
+		float: left;
+		padding: 0px 10px;
+		margin-bottom: 0;
+	}
+	
+	h1 a {
+		display: block;
+		width: 120px;
+		height: 30px;
+		font-size: 0;
+		background: url("../image/logo.svg") left top/120px auto no-repeat;
+		margin: 0;
+	}
+	
+	.gheader_top_sp{
+		height: 60px;
+		width: 100%;
+		position: fixed;
+		z-index: 31;
+		background-color: #F3EDE6;
+	}
+	
+	#pagetop{
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		right: 25px;
+		bottom: 30px;
+		background: #c1a487;
+		opacity: 0.6;
+		border-radius: 50%;
+	}
+	#pagetop a{
+		position: relative;
+		display: block;
+		width: 50px;
+		height: 50px;
+		text-decoration: none;
+		text-align: center;
+	}
+	#pagetop a::before{
+		font-family: "Font Awesome 5 Free";
+		content: '\f106';
+		font-weight: 900;
+		font-size: 25px;
+		color: #fff;
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		top: 10px;
+		bottom: 10px;
+		right: 0;
+		left: 0;
+		margin: auto;
+	}
+	
+	ul {
+		list-style: none;
+	}
+	
+	.gheader_top,.mainimage {
+		display: none;
+	}
+	
+	.mainimage_sp {
+		height: 550px;
+		margin: 0 auto;
+		text-align: left;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.mainimage_sp img {
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		margin-top: 60px;
+	}
+	
+	/*ナビメニューのスタイルを指定*/
+	nav.NavMenu{
+		position: fixed; /*表示位置を固定*/
+		z-index: 32; /*重ね順を変更*/
+		top: 0; /*表示位置を指定*/
+		left: 0; /*表示位置を指定*/
+		background: #fff;/*背景を白にする*/
+		color: #FFF; /*文字色を黒にする*/
+		text-align: center; /*テキストを中央揃え*/
+		width: 100%; /*全幅表示*/
+		transform: translateY(-100%); /*ナビを上に隠す*/
+		transition: all 0.6s; /*アニメーションの時間を指定*/
+		opacity: 0.95;
+	}
+
+	nav.NavMenu ul{
+		background: #a4876a;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	nav.NavMenu ul li{
+		font-size: 16px;
+		list-style-type: none;
+		padding: 0;
+		width: 100%;
+		border-bottom: 1px dotted #333;
+		color: #000000;
+	}
+
+	nav.NavMenu ul li:last-child{
+		padding-bottom: 0;
+		border-bottom: none; /*最後のメニュー項目のみ下線を消す*/
+	}
+
+	nav.NavMenu ul li a{
+		display: block; /*クリックできる領域を広げる*/
+		color: #fff;
+		padding: 16px 0;
+		text-decoration: none;
+	}
+	/*トグルボタンが押されたときに付与するクラス*/
+	nav.NavMenu.active{
+		transform: translateY(0%);
+	}
+	
+	/*トグルボタンのスタイルを指定*/
+	.Toggle {
+		display: block;
+		position: fixed;    /* bodyに対しての絶対位置指定 */
+		right: 13px;
+		top: 12px;
+		width: 42px;
+		height: 42px;
+		cursor: pointer;
+		z-index: 33;
+	}
+
+	.Toggle span {
+		display: block;
+		position: absolute;
+		width: 30px;
+		border-bottom: solid 1px #000000;
+		-webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+		-moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+		transition: .35s ease-in-out;			/*変化の速度を指定*/
+		left: 6px;
+	}
+
+	.Toggle span:nth-child(1) {
+		top: 9px;
+	}
+
+	.Toggle span:nth-child(2) {
+		top: 18px;
+	}
+
+	.Toggle span:nth-child(3) {
+		top: 27px;
+	}
+
+	/* 最初のspanをマイナス45度に */
+	.Toggle.active span:nth-child(1) {
+		top: 18px;
+		left: 6px;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	/* 2番目と3番目のspanを45度に */
+	.Toggle.active span:nth-child(2),
+	.Toggle.active span:nth-child(3) {
+		top: 18px;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	
+	.gheader_top,.navTop,.navTop_other {
+		display: none;
+	}
+	
+	.message_title {
+	    margin-top: 60px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 10px;
+		font-size: 40px;
+		font-family: 'Rozha One', serif;
+	}
+	
+	.message_text {
+		padding-left: 25px;
+		padding-right: 25px;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	
+	.message_contents {
+		position: relative;
+	}
+	
+	.message_contents h3{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%,-50%);
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		margin:0;
+		padding:0;
+		color: #F4F4F4;
+		text-align: center;
+		font-family: 'Rozha One', serif;
+	}
+
+	.message_image img {
+		display: none;
+	}
+	
+	.message_image_sp img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.about_title {
+		margin-top: 60px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 10px;
+		font-size: 40px;
+		font-family: 'Rozha One', serif;
+	}
+	
+	.about_text {
+		padding-left: 25px;
+		padding-right: 25px;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	
+	.about_subcontents {
+		height: 600px;
+		background-color: #FFFFFF;
+		padding-top: 40px;
+	}
+	
+	.about_image1 img {
+		width: 60%;
+		height: auto;
+		margin-bottom: 10px;
+		    margin-left: 30px;
+	}
+	
+	.about_subcontents h3 {
+		text-align: center;
+		font-size: 40px;
+		height: 50px;
+		width: 30%;
+		display: table-cell;
+		vertical-align: middle;
+		clear: left;
+		font-family: 'Rozha One', serif;
+	}
+	
+	.about_subcontents p {
+		clear: left;
+		text-align: center;
+		width: 80%;
+		margin: 0 auto 30px auto;
+	}
+	
+	.about_image2 img {
+		width: 60%;
+		height: auto;
+		float: right;
+		margin-right: 30px;
+	}
+	
+	.about_viewmore img {
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
+	}
+	
+	.menu_title {
+		margin-top: 60px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 10px;
+		font-size: 40px;
+		font-family: 'Rozha One', serif;
+	}
+	
+	.menu_text {
+		padding-left: 25px;
+		padding-right: 25px;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	
+	.menu_subcontents,#slideshow,#slideshow2 {
+		display: none;
+	}
+	
+	.menu_subcontents_sp {
+		height: 500px;
+		background-color: #FFFFFF;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+#slideshow_sp {
+   position: relative;
+   width:  280px; 
+   height: 190px; 
+	margin: 0 auto;
+}
+#slideshow_sp img {
+   position: absolute;
+   top: 0;
+   left:0;
+   z-index: 8;
+   opacity: 0.0;
+
+}
+#slideshow_sp img.active {
+   z-index: 10;
+   opacity: 1.0;
+}
+#slideshow_sp img.last-active {
+   z-index: 9;
+}
+	
+	.menu_name1 {
+		width: 280px;
+		text-align: left;
+		margin: 0 auto 15px;
+	}
+	
+#slideshow2_sp {
+   position: relative;
+   width:  280px; 
+   height: 190px;
+	margin: 0 auto;
+}
+#slideshow2_sp img {
+   position: absolute;
+   top: 0;
+   left:0;
+   z-index: 8;
+   opacity: 0.0;
+}
+#slideshow2_sp img.active {
+   z-index: 10;
+   opacity: 1.0;
+}
+#slideshow2_sp img.last-active {
+   z-index: 9;
+}
+	
+	.menu_name2 {
+		width: 280px;
+		text-align: left;
+		margin: 0 auto;
+	}
+	
+	.menu_viewmore {
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
+	}
+	
+	.menu_viewmore img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.shop_title {
+		margin-top: 60px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-bottom: 10px;
+		font-size: 40px;
+		font-family: 'Rozha One', serif;
+	}
+	
+	.shop_text {
+		padding-left: 25px;
+		padding-right: 25px;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	
+	.shop_subcontents {
+		height: 900px;
+		background-color: #FFFFFF;
+		padding-top: 40px;
+		clear: left;
+		margin:0;
+		padding:0;
+	}
+	
+	.shop_subcontents p {
+		text-align: center;
+		margin: 0;
+	}
+	
+	.shop_map {
+		width: 80%;
+		margin: 0 auto;
+	}
+	
+	.shop_map iframe {
+		width: 100%;
+		margin: 30px auto;
+	}
+	
+	.shop_viewmore {
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
+	}
+	
+	.shop_viewmore img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.footer {
+		margin-top: 100px;
+		height: 350px;
+		background-color: #FFFFFF;
+		padding: 70px 20px 0px 20px;
+	}
+	
+	.footer_detail {
+		height: 150px;
+		width: 100%;
+	}
+	
+	.footer_logo img {
+		width: 100px;
+		height: auto;
+		filter: grayscale(100%);
+		float: left;
+	}
+	
+	.footer_nav {
+		clear: left;
+		float: left;
+		margin: 0;
+		margin-top: 30px;
+		font-size: 16px;
+		line-height: 35px;
+	}
+	
+	.footer_nav2 {
+		float: left;
+		margin: 0;
+		margin-top: 30px;
+		font-size: 16px;
+		line-height: 35px;
+	}
+	
+	.footer_navBlock a{
+		text-decoration: none;
+		color: #000000;
+	}
+	.footer_navBlock a:hover{
+		text-decoration: underline;
+	}
+	
+	.footer_sns {
+		clear: left;
+		float: left;
+		margin-top: 8px;
+		font-size: 16px;
+		line-height: 35px;
+	}
+	
+	.footer_snsBlock a{
+		text-decoration: none;
+		color: #000000;
+	}
+	.footer_snsBlock a:hover{
+		text-decoration: underline;
+	}
+	
+	.footer_bottom {
+		width: 100%;
+		clear: left;
+		height: 30px;
+		padding-top: 20px;
+	}
+	
+	.footer_bottom p {
+		clear: left;
+		text-align: center;
+		font-size: 2px;
+	}
+	
+}
