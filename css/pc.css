@@ -21,7 +21,7 @@
 		overflow:hidden;
 	}
 	
-	.NavMenu,.Toggle,.mainimage_sp,.gheader_sp {
+	.NavMenu,.Toggle,.mainimage_sp,.gheader_sp,.reservation_sp {
 		display: none;
 	}
 	
@@ -68,6 +68,7 @@
 		float: left;
 		padding: 0px 10px;
 		margin-top: 15px;
+		margin-left: 10px;
 	}
 	
 	h1 a {
@@ -105,27 +106,63 @@
 		width: 140px;
 		text-align: center;
 		float: right;
-		height: 50px;
+		height: 55px;
 		line-height: 50px;
-		margin-right: 0px;	/*list間*/
+		margin-right: 0px;
+
 	}
 
 	/*グローバルナビトップのリンク*/
 	.navTop_other li a {
 		text-decoration: none;
-		color: #1C1C1C;
+
 		font-family: "Noto Serif Japanese", "Times New Roman", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", 游明朝, YuMincho, HGS明朝E, "ＭＳ Ｐ明朝", "MS PMincho", serif;
 		font-weight: bold;
 		padding: 20px;
 		transition: all .3s;
 	}
 	
-	.navTop_item a:hover {
+	.navTop_item a {
+		color: #1C1C1C;		
+	}
+	
+	.navTop_item a:hover,.navTop_item_menu a:hover {
 		color: #AFAFAF;
 	}
-
+	
+	.navTop_item_menu {
+		width: 100px;
+		text-align: center;
+		float: right;
+		height: 55px;
+		line-height: 50px;
+		margin-right: 10px;
+	    margin-left: 40px;
+	}
+	
+	.navTop_item_menu a {
+		color: #1C1C1C;		
+	}
+	
+	.navTop_item_reserve {
+		width: 140px;
+		text-align: center;
+		float: right;
+		height: 55px;
+		line-height: 50px;
+		background-color: #af7a46;
+	}
+	
+	.navTop_item_reserve a {
+		color: #F4F4F4;
+	}
+	
 	.navTop_item_reserve a:hover {
-		color: #6B6B6B;
+		color: #B47334;
+	}
+	
+	.navTop_item_reserve:hover {
+		background-color: #F4F4F4;
 	}
 	
 	.mainimage {
@@ -199,7 +236,8 @@
 		padding:0;
 		margin: 0;
 		color: #F4F4F4;
-		font-size: 26px;
+		font-size: 36px;
+		font-family: 'Rozha One', serif;
 	}
 		
 	.message_image_sp img {
@@ -270,8 +308,17 @@
 	}
 	
 	.about_viewmore {
-		margin-top: 800px;
+		margin-top: 850px;
 		margin-left: 1000px;
+	}
+
+	.about_viewmore:hover {
+		opacity: 0.6;
+		filter: brightness(110%);
+	}
+	
+	.about_viewmore img {
+		width: 75%;
 	}
 	
 	.menu_title {
@@ -379,6 +426,15 @@
 		margin-left: 1000px;
 	}
 	
+	.menu_viewmore:hover {
+		opacity: 0.6;
+		filter: brightness(110%);
+	}
+	
+	.menu_viewmore img {
+		width: 75%;
+	}
+	
 	.shop_title {
 		clear: right;
 		margin-top: 170px;
@@ -427,9 +483,23 @@
 	}
 	
 	.shop_viewmore {
-		margin-top: 530px;
+		margin-top: 500px;
 		margin-left: 1000px;
 		clear: left;
+	}
+	
+	.shop_viewmore:hover {
+		opacity: 0.6;
+		filter: brightness(110%);
+	}
+	
+	.shop_webreserve:hover {
+		opacity: 0.6;
+		filter: brightness(110%);
+	}
+	
+	.shop_viewmore img {
+		width: 75%;
 	}
 	
 	.footer {
@@ -484,7 +554,7 @@
 	
 	.footer_bottom p {
 		clear: left;
-		text-align: right;
+		text-align: center;
 		width: 98%;
 		font-size: 12px;
 	}
