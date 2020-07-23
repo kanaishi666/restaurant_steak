@@ -1,18 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
 
-@media screen and (min-width:781px) {
-	
-	.navMain_sp {
-		display: none;
-	}
-	
+@media screen and (max-width:767px) {
+
 	body{
 		margin-top: 0;
 		margin: 0 auto;
 		padding-bottom: 0;
 		background-color: #f3ede6;
-		font-family: "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ ProN W3", 'Hiragino Kaku Gothic ProN', "メイリオ", sans-serif;
 	}
 	
 	/*右の余白を消し、画面幅に収める*/
@@ -21,8 +16,27 @@
 		overflow:hidden;
 	}
 	
-	.NavMenu,.Toggle,.mainimage_sp,.gheader_sp,.reservation_sp {
-		display: none;
+	h1 {
+		float: left;
+		padding: 0px 10px;
+		margin-bottom: 0;
+	}
+	
+	h1 a {
+		display: block;
+		width: 120px;
+		height: 30px;
+		font-size: 0;
+		background: url("../logo.svg") left top/120px auto no-repeat;
+		margin: 0;
+	}
+	
+	.gheader_top_sp{
+		height: 60px;
+		width: 100%;
+		position: fixed;
+		z-index: 31;
+		background-color: #F3EDE6;
 	}
 	
 	#pagetop{
@@ -34,7 +48,6 @@
 		background: #c1a487;
 		opacity: 0.6;
 		border-radius: 50%;
-		z-index: 999;
 	}
 	#pagetop a{
 		position: relative;
@@ -64,152 +77,152 @@
 		list-style: none;
 	}
 	
-	h1 {
-		float: left;
-		padding: 0px 10px;
-		margin-top: 15px;
-		margin-left: 10px;
+	.gheader_top,.mainimage {
+		display: none;
 	}
 	
-	h1 a {
-		display: block;
-		width: 130px;
-		height: 30px;
-		font-size: 0;
-		background: url("../logo.svg") left top/130px auto no-repeat;
-		margin: 0;
-	}
-
-	.navTop {
-		overflow: hidden;
-		width: 100%;
-		height: 55px;
-	}
-
-	.navTop_other {
-		background-color: #f3ede6;
-		white-space: nowrap;
-		height: 50px;
-		margin-left: auto;
-		opacity: 0.9;
-	}
-
-	.navTop_other ul{
-		text-align: right;
-		margin: 0;
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	/*「宿泊予約」以外*/
-	.navTop_item {
-		width: 140px;
-		text-align: center;
-		float: right;
-		height: 55px;
-		line-height: 50px;
-		margin-right: 0px;
-
-	}
-
-	/*グローバルナビトップのリンク*/
-	.navTop_other li a {
-		text-decoration: none;
-
-		font-family: "Noto Serif Japanese", "Times New Roman", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", 游明朝, YuMincho, HGS明朝E, "ＭＳ Ｐ明朝", "MS PMincho", serif;
-		font-weight: bold;
-		padding: 20px;
-		transition: all .3s;
-	}
-	
-	.navTop_item a {
-		color: #1C1C1C;		
-	}
-	
-	.navTop_item a:hover,.navTop_item_menu a:hover {
-		color: #AFAFAF;
-	}
-	
-	.navTop_item_menu {
-		width: 100px;
-		text-align: center;
-		float: right;
-		height: 55px;
-		line-height: 50px;
-		margin-right: 10px;
-	    margin-left: 40px;
-	}
-	
-	.navTop_item_menu a {
-		color: #1C1C1C;		
-	}
-	
-	.navTop_item_reserve {
-		width: 140px;
-		text-align: center;
-		float: right;
-		height: 55px;
-		line-height: 50px;
-		background-color: #af7a46;
-	}
-	
-	.navTop_item_reserve a {
-		color: #F4F4F4;
-	}
-	
-	.navTop_item_reserve a:hover {
-		color: #B47334;
-	}
-	
-	.navTop_item_reserve:hover {
-		background-color: #F4F4F4;
-	}
-	
-	.mainimage {
-		height: 650px;
+	.mainimage_sp {
+		height: 550px;
 		margin: 0 auto;
 		text-align: left;
 		overflow: hidden;
 		position: relative;
 	}
 	
-	.mainimage img {
+	.mainimage_sp img {
 		width: 100%;
 		top: 0;
 		left: 0;
 		position: absolute;
+		margin-top: 60px;
 	}
 	
-#slideshow_main {
-   position: relative;
-   width:  1920px; /* 画像の横幅に合わせて記述 */
-   height: 900px; /* 画像の高さに合わせて記述 */
-	margin: 0;
-	float: left;
-}
-#slideshow_main img {
-   position: absolute;
-   top: 0;
-   left:0;
-   z-index: 8;
-   opacity: 0.0;
-	margin-left: 70px;
-}
-#slideshow_main img.active {
-   z-index: 10;
-   opacity: 1.0;
-}
-#slideshow_main img.last-active {
-   z-index: 9;
-}
+	/*ナビメニューのスタイルを指定*/
+	nav.NavMenu{
+		position: fixed; /*表示位置を固定*/
+		z-index: 33; /*重ね順を変更*/
+		top: 0; /*表示位置を指定*/
+		left: 0; /*表示位置を指定*/
+		background: #fff;/*背景を白にする*/
+		color: #FFF; /*文字色を黒にする*/
+		text-align: center; /*テキストを中央揃え*/
+		width: 100%; /*全幅表示*/
+		transform: translateY(-100%); /*ナビを上に隠す*/
+		transition: all 0.6s; /*アニメーションの時間を指定*/
+		opacity: 0.95;
+	}
+
+	nav.NavMenu ul{
+		background: #a4876a;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	nav.NavMenu ul li{
+		font-size: 16px;
+		list-style-type: none;
+		padding: 0;
+		width: 100%;
+		border-bottom: 1px dotted #333;
+		color: #000000;
+	}
+
+	nav.NavMenu ul li:last-child{
+		padding-bottom: 0;
+		border-bottom: none; /*最後のメニュー項目のみ下線を消す*/
+	}
+
+	nav.NavMenu ul li a{
+		display: block; /*クリックできる領域を広げる*/
+		color: #fff;
+		padding: 16px 0;
+		text-decoration: none;
+	}
+	/*トグルボタンが押されたときに付与するクラス*/
+	nav.NavMenu.active{
+		transform: translateY(0%);
+	}
+	
+	/*トグルボタンのスタイルを指定*/
+	.Toggle {
+		display: block;
+		position: fixed;    /* bodyに対しての絶対位置指定 */
+		right: 13px;
+		top: 12px;
+		width: 42px;
+		height: 42px;
+		cursor: pointer;
+		z-index: 33;
+	}
+
+	.Toggle span {
+		display: block;
+		position: absolute;
+		width: 30px;
+		border-bottom: solid 1px #000000;
+		-webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+		-moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+		transition: .35s ease-in-out;			/*変化の速度を指定*/
+		left: 6px;
+	}
+
+	.Toggle span:nth-child(1) {
+		top: 9px;
+	}
+
+	.Toggle span:nth-child(2) {
+		top: 18px;
+	}
+
+	.Toggle span:nth-child(3) {
+		top: 27px;
+	}
+
+	/* 最初のspanをマイナス45度に */
+	.Toggle.active span:nth-child(1) {
+		top: 18px;
+		left: 6px;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	/* 2番目と3番目のspanを45度に */
+	.Toggle.active span:nth-child(2),
+	.Toggle.active span:nth-child(3) {
+		top: 18px;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	
+	.reservation_sp {
+		position: fixed;
+		display: block;
+		z-index: 32;
+		right: 60px;
+		top: 4px;
+		height: 53px;
+		background-color: #af7a46;
+		width: 80px;
+    	text-align: center;
+	}
+	
+	.reservation_sp  p {
+		color: #F4F4F4;
+	}
+	
+	.gheader_top,.navTop,.navTop_other {
+		display: none;
+	}
 	
 	.message_title {
+	    margin-top: 60px;
 		padding-left: 25px;
 		padding-right: 25px;
 		padding-bottom: 10px;
-		font-size: 60px;
-		float: left;
-		margin-top: 170px;
+		font-size: 40px;
 		font-family: 'Rozha One', serif;
 	}
 	
@@ -217,9 +230,7 @@
 		padding-left: 25px;
 		padding-right: 25px;
 		margin: 0;
-		margin-bottom: 10px;
-		float: left;
-		margin-top: 190px;
+		margin-bottom: 30px;
 	}
 	
 	.message_contents {
@@ -228,289 +239,251 @@
 	
 	.message_contents h3{
 		position: absolute;
-		top: 65%;
+		top: 50%;
 		left: 50%;
 		-ms-transform: translate(-50%,-50%);
 		-webkit-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
+		margin:0;
 		padding:0;
-		margin: 0;
 		color: #F4F4F4;
-		font-size: 36px;
+		text-align: center;
 		font-family: 'Rozha One', serif;
 	}
-		
-	.message_image_sp img {
+
+	.message_image img {
 		display: none;
 	}
 	
-	.message_image img {
+	.message_image_sp img {
 		width: 100%;
 		height: auto;
 	}
 	
 	.about_title {
-		margin-top: 170px;
+		margin-top: 60px;
 		padding-left: 25px;
 		padding-right: 25px;
 		padding-bottom: 10px;
-		font-size: 60px;
-		float: left;
+		font-size: 40px;
 		font-family: 'Rozha One', serif;
 	}
 	
 	.about_text {
-		margin-top: 190px;
 		padding-left: 25px;
 		padding-right: 25px;
-		float: left;
-		height: 44.8px;
+		margin: 0;
+		margin-bottom: 30px;
 	}
 	
 	.about_subcontents {
-		width: 90%;
-		height: 1100px;
+		height: 650px;
 		background-color: #FFFFFF;
-		padding: 100px 40px;
-		clear: left;
+		padding-top: 40px;
 	}
 	
 	.about_image1 img {
-		width: 50%;
+		width: 60%;
 		height: auto;
-		float: left;
-		margin-bottom: 60px;
-		margin-left: 60px;
+		margin-bottom: 10px;
+		    margin-left: 30px;
 	}
 	
 	.about_subcontents h3 {
 		text-align: center;
-		width: 620px;
+		font-size: 40px;
+		height: 50px;
+		width: 30%;
 		display: table-cell;
 		vertical-align: middle;
-		font-size: 65px;
-		margin-top: 120px;
+		clear: left;
 		font-family: 'Rozha One', serif;
 	}
 	
 	.about_subcontents p {
+		clear: left;
 		text-align: center;
-		vertical-align: middle;
-		font-size: 18px;
+		width: 80%;
+		margin: 0 auto 30px auto;
 	}
 	
 	.about_image2 img {
-		clear: left;
-		width: 50%;
+		width: 60%;
 		height: auto;
-		float: left;
-		margin-left: 30%;
-	}
-	
-	.about_viewmore {
-		margin-top: 850px;
-		margin-left: 1000px;
-	}
-
-	.about_viewmore:hover {
-		opacity: 0.6;
-		filter: brightness(110%);
+		float: right;
+		margin-right: 30px;
 	}
 	
 	.about_viewmore img {
-		width: 75%;
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
 	}
 	
 	.menu_title {
-		margin-top: 170px;
+		margin-top: 60px;
 		padding-left: 25px;
 		padding-right: 25px;
 		padding-bottom: 10px;
-		font-size: 60px;
-		float: left;
+		font-size: 40px;
 		font-family: 'Rozha One', serif;
 	}
 	
 	.menu_text {
-		margin-top: 190px;
 		padding-left: 25px;
 		padding-right: 25px;
-		float: left;
-		height: 44.8px;
+		margin: 0;
+		margin-bottom: 30px;
 	}
 	
-	.menu_subcontents_sp,#slideshow_sp,#slideshow2_sp {
+	.menu_subcontents,#slideshow,#slideshow2 {
 		display: none;
 	}
 	
-	.menu_subcontents {
-		width: 90%;
-		float: right;
-		height: 550px;
+	.menu_subcontents_sp {
+		height: 520px;
 		background-color: #FFFFFF;
-		padding-top: 60px;
-		clear: left;
-		padding-right: auto;
-		padding-left: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 	
-#menu1 {
+#slideshow_sp {
    position: relative;
-   width:  500px; /* 画像の横幅に合わせて記述 */
-   height: 350px; /* 画像の高さに合わせて記述 */
-	margin: 0;
-	float: left;
+   width:  280px; 
+   height: 190px; 
+	margin: 0 auto;
 }
-#menu1 img {
+#slideshow_sp img {
    position: absolute;
    top: 0;
    left:0;
    z-index: 8;
    opacity: 0.0;
-	margin-left: 70px;
+
 }
-#menu1 img.active {
+#slideshow_sp img.active {
    z-index: 10;
    opacity: 1.0;
 }
-#menu1 img.last-active {
-   z-index: 9;
-}
-	
-#menu2 {
-   position: relative;
-   width:  500px; /* 画像の横幅に合わせて記述 */
-   height: 350px; /* 画像の高さに合わせて記述 */
-	margin: 0;
-	float: left;
-}
-#menu2 img {
-   position: absolute;
-   top: 0;
-   left:0;
-   z-index: 8;
-   opacity: 0.0;
-		margin-left: 190px;
-}
-#menu2 img.active {
-   z-index: 10;
-   opacity: 1.0;
-}
-#menu2 img.last-active {
+#slideshow_sp img.last-active {
    z-index: 9;
 }
 	
 	.menu_name1 {
-		width: 500px;
+		width: 280px;
 		text-align: left;
-		margin: 0;
-		clear: left;
-		float: left;
-		margin-left: 70px;
-		position: relative;
-		font-size: 18px;
+		margin: 0 auto 15px;
 	}
 	
+#slideshow2_sp {
+   position: relative;
+   width:  280px; 
+   height: 190px;
+	margin: 0 auto;
+}
+#slideshow2_sp img {
+   position: absolute;
+   top: 0;
+   left:0;
+   z-index: 8;
+   opacity: 0.0;
+}
+#slideshow2_sp img.active {
+   z-index: 10;
+   opacity: 1.0;
+}
+#slideshow2_sp img.last-active {
+   z-index: 9;
+}
+	
 	.menu_name2 {
-		width: 500px;
+		width: 280px;
 		text-align: left;
-		margin: 0;
-		float: left;
-		display: block;
-		margin-left: 120px;
-		font-size: 18px;
+		margin: 0 auto;
 	}
 	
 	.menu_viewmore {
-		margin-top: 420px;
-		margin-left: 1000px;
-	}
-	
-	.menu_viewmore:hover {
-		opacity: 0.6;
-		filter: brightness(110%);
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
 	}
 	
 	.menu_viewmore img {
-		width: 75%;
+		width: 100%;
+		height: auto;
 	}
 	
 	.shop_title {
-		clear: right;
-		margin-top: 170px;
+		margin-top: 60px;
 		padding-left: 25px;
 		padding-right: 25px;
 		padding-bottom: 10px;
-		font-size: 60px;
-		float: left;
+		font-size: 40px;
 		font-family: 'Rozha One', serif;
 	}
 	
 	.shop_text {
-		margin-top: 190px;
 		padding-left: 25px;
 		padding-right: 25px;
-		float: left;
-		height: 44.8px;
+		margin: 0;
+		margin-bottom: 30px;
 	}
 	
 	.shop_subcontents {
-		height: 620px;
+		height: 930px;
 		background-color: #FFFFFF;
-		padding-top: 60px;
+		padding-top: 40px;
 		clear: left;
-		width: 90%;
+		margin:0;
+		padding:0;
 	}
 	
 	.shop_subcontents p {
-		text-align: left;
-		font-size: 18px;
+		text-align: center;
+		margin: 0;
+	}
+	
+	.shop_map {
+		width: 80%;
+		margin: 0 auto;
 	}
 	
 	.shop_map iframe {
-		width: 50%;
-		margin-left: 150px;
-		float: left;
+		width: 100%;
+		margin: 30px auto;
 	}
 	
-	.shop_detail {
-		float: left;
-		margin-left: 30px;
-	}
-	
-	.shop_detail_text {
-		margin-bottom: 40px;
+	.shop_webreserve {
+		margin: 10px auto;
+		width: 100%;
+		display: block;
+		box-shadow: 8px 8px 10px #dddddd;
 	}
 	
 	.shop_viewmore {
-		margin-top: 500px;
-		margin-left: 1000px;
-		clear: left;
-	}
-	
-	.shop_viewmore:hover {
-		opacity: 0.6;
-		filter: brightness(110%);
-	}
-	
-	.shop_webreserve:hover {
-		opacity: 0.6;
-		filter: brightness(110%);
+		width: 160px;
+		height: auto;
+		margin-top: 40px;
+		margin-left: 210px;
 	}
 	
 	.shop_viewmore img {
-		width: 75%;
+		width: 100%;
+		height: auto;
 	}
 	
 	.footer {
 		margin-top: 100px;
-		height: 200px;
+		height: 350px;
 		background-color: #FFFFFF;
-		padding: 100px 50px 10px 50px;
+		padding: 70px 20px 0px 20px;
 	}
 	
 	.footer_detail {
 		height: 150px;
+		width: 100%;
 	}
 	
 	.footer_logo img {
@@ -521,14 +494,20 @@
 	}
 	
 	.footer_nav {
+		clear: left;
 		float: left;
 		margin: 0;
-		margin-left: 90px;
+		margin-top: 30px;
+		font-size: 16px;
+		line-height: 35px;
 	}
 	
 	.footer_nav2 {
 		float: left;
 		margin: 0;
+		margin-top: 30px;
+		font-size: 16px;
+		line-height: 35px;
 	}
 	
 	.footer_navBlock a{
@@ -540,8 +519,11 @@
 	}
 	
 	.footer_sns {
-		float: right;
-		width: 12%;
+		clear: left;
+		float: left;
+		margin-top: 8px;
+		font-size: 16px;
+		line-height: 35px;
 	}
 	
 	.footer_snsBlock a{
@@ -552,12 +534,17 @@
 		text-decoration: underline;
 	}
 	
+	.footer_bottom {
+		width: 100%;
+		clear: left;
+		height: 30px;
+		padding-top: 20px;
+	}
+	
 	.footer_bottom p {
 		clear: left;
 		text-align: center;
-		width: 98%;
 		font-size: 12px;
 	}
-	
 	
 }
