@@ -13,12 +13,13 @@
 		padding-bottom: 0;
 		background-color: #f3ede6;
 		font-family: "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ ProN W3", 'Hiragino Kaku Gothic ProN', "メイリオ", sans-serif;
+		min-width: 1500px;
+		overflow:auto;
 	}
 	
 	/*右の余白を消し、画面幅に収める*/
 	#wrapper {
 		width:100%;
-		overflow:hidden;
 	}
 	
 	.NavMenu,.Toggle,.mainimage_sp,.gheader_sp,.reservation_sp {
